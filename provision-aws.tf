@@ -1,19 +1,16 @@
-resource "aws_instance" "web" {
-    ami="ami-03d11d41e18ce29fc"
-    instance_type = "t2.small"
-    key_name = "runGitLab"
-    tags{
-        Name = "SpringBootApplication",
-        ScheduledStartStop = "True",
-        Equipe = "TecNinjas",
-        Sistema = "GitlabGinger"
-    }
-    security_groups = ["TestAnsible"]  
+provider "aws" {
+  region     = "${var.region}"
+  access_key = "${var.access_key}"
+  secret_key = "${var.secret_key}"
 }
 
-provider "aws" {
-    region="us-east-1"
+resource "aws_instance" "web" {
+    ami="${var.ami}"
+    instance_type = "${var.type}"
+    key_name = "datadog"
+    tags = "${var.tags}"
 }
+
 output "ip" {
-  value = "${aws_instance.web.*.public_ip}"
+    value = "${aws_instance.web.*.public_ip}"
 }
