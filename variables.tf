@@ -22,8 +22,10 @@ variable "type" {
 variable "tags" {
     type = "map"
     default = {
-        "Name" = "DATADOG"
+        "Name" = "Harness-Lab"
         "ScheduledStartStop" = "True"
+        "owner" = "Redda"
+        
     }
 }
 
