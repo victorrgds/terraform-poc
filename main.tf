@@ -7,7 +7,7 @@ provider "aws" {
 resource "aws_instance" "web" {
     ami="${var.ami}"
     instance_type = "${var.type}"
-    key_name = "datadog"
+    key_name = "harness"
     tags = "${var.tags}"
 }
 
