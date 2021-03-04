@@ -22,9 +22,10 @@ variable "type" {
 variable "tags" {
     type = "map"
     default = {
-        "Name" = "Harness-Lab"
+        "Name" = "datadog-lab"
         "ScheduledStartStop" = "True"
-        "owner" = "Redda"
+        "owner" = "Victor"
+        "env" = "technical-exercise"
         
     }
 }
